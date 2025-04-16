@@ -9,9 +9,11 @@ import {Outlet} from 'react-router-dom';
 const AppLayout = () => {
     return (
         <div>
-            <Navbar expand="lg" className="bg-body-tertiary">
+            <Navbar expand="lg" data-bs-theme="dark" className="bg-body-tertiary" sticky="top">
                 <Container fluid>
-                    <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+                    <Navbar.Brand href="#">
+                        <img src="/netflixLogo.svg" width="93" />
+                    </Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
@@ -19,8 +21,8 @@ const AppLayout = () => {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <Nav.Link href="#action1">Home</Nav.Link>
-                            <Nav.Link href="#action2">Link</Nav.Link>
+                            <Nav.Link href="/" className="text-white">Home</Nav.Link>
+                            <Nav.Link href="/movies" className="text-white">Movies</Nav.Link>
                         </Nav>
                         <Form className="d-flex">
                             <Form.Control
@@ -29,7 +31,7 @@ const AppLayout = () => {
                                 className="me-2"
                                 aria-label="Search"
                             />
-                            <Button variant="outline-success">Search</Button>
+                            <Button variant="outline-danger">Search</Button>
                         </Form>
                     </Navbar.Collapse>
                 </Container>

@@ -9,7 +9,7 @@ import './PopularMoviesSlide.style.css';
 const responsive = {
     desktop: {
         breakpoint: {max: 3000, min: 1024},
-        items: 6
+        items: 4
     },
     tablet: {
         breakpoint: {max: 1024, min: 464},
@@ -31,9 +31,10 @@ const PopularMoviesSlide = () => {
         return <Alert variant="danger">{error.message}</Alert>;
     }
 
-    return <div>
-        <h3>Popular Movies</h3>
+    return <div className="px-5">
+        <h3 className="fw-bold pt-5">Popular Movies</h3>
         <Carousel
+            className="react-multi-carousel-list carousel-container "
             infinite={true}
             centerMode={true}
             itemClass="movie-slider p-1"
