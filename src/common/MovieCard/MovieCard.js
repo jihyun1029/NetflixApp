@@ -24,15 +24,27 @@ const MovieCard = ({movie}) => {
         }}
         className="movie-card"
     >
-        <div className="overlay">
+        <div className="overlay p-2">
             <h1>{movie.title}</h1>
-            {showGenre(movie.genre_ids).map((genre, index) => (
-                <Badge bg="danger" key={index} className="me-1">{genre}</Badge>
-            ))}
             <div>
-                <div>{movie.vote_average}</div>
-                <div>{movie.popularity}</div>
-                <div>{movie.adult ? 'over18' : 'under18'}</div>
+                {showGenre(movie.genre_ids).map((genre, index) => (
+                    <Badge bg="danger" key={index} className="me-1">{genre}</Badge>
+                ))}
+            </div>
+            <div className="mt-2">
+                {/*<div>*/}
+                {/*    <img src="/IMDB.png" width="20" className="me-1"/>*/}
+                {/*    {movie.vote_average}*/}
+                {/*</div>*/}
+                <div>
+                    <img src="/IMDB.png" width="20" className="me-1"/>
+                    <span>{movie.popularity}</span>
+                    {movie.adult ? (
+                        <img src="/over18.svg" width={20} className="ms-2" />
+                    ) : (
+                        <img src="/under18.svg" width={20} className="ms-2" />
+                    )}
+                </div>
             </div>
         </div>
     </div>

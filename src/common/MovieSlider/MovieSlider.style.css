@@ -3,6 +3,17 @@
     height: 440px;
 }
 
+.overlay h1 {
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    font-size: 2rem;
+    overflow: hidden;
+    padding-bottom: 10px;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
 @media (max-width: 480px) {
     .carousel-container {
         height: 330px;
