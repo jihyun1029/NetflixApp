@@ -1,5 +1,5 @@
 .movie-card {
-    width: 220px;
+    width: 100%;
     height: 330px;
     background-size: cover;
     cursor: pointer;
@@ -17,11 +17,14 @@
     overflow-wrap: break-word;
 }
 
-.overlay:hover {
-    opacity: 1;
-}
+/* PC 이상에서만 hover 적용 */
+@media (min-width: 768px) {
+    .overlay:hover {
+        opacity: 1;
+    }
 
-.movie-card:hover {
-    transform: scale(1.3) translateZ(20px);
-    z-index: 2;
+    .movie-card:hover {
+        transform: scale(1.3) translateZ(20px);
+        z-index: 2;
+    }
 }

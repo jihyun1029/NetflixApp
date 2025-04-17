@@ -9,7 +9,7 @@ import {Outlet} from 'react-router-dom';
 const AppLayout = () => {
     return (
         <div>
-            <Navbar expand="lg" data-bs-theme="dark" className="bg-body-tertiary" sticky="top">
+            <Navbar expand="lg" data-bs-theme="dark" className="bg-black" sticky="top">
                 <Container fluid>
                     <Navbar.Brand href="/">
                         <img src="/netflixLogo.svg" width="93" />
