@@ -4,6 +4,10 @@
     background-size: cover;
     cursor: pointer;
     transition: 0.5s;
+    border: 2px solid #555555;
+    border-radius: 10px;
+
+
 }
 
 .overlay {
@@ -15,6 +19,7 @@
     color: white;
     font-weight: bold;
     overflow-wrap: break-word;
+    border-radius: 10px;
 }
 
 /* PC 이상에서만 hover 적용 */
@@ -24,6 +29,7 @@
     }
 
     .movie-card:hover {
+        border: 4px solid #ffffff;
         transform: scale(1.3) translateZ(20px);
         z-index: 2;
     }
