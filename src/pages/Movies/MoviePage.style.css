@@ -1,0 +1,35 @@
+/* 전체 pagination container */
+.r-pagination {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* 각 페이지 아이템 (li) */
+.r-page-item {
+    width: 32px;
+    height: 32px;
+}
+
+/* 각 페이지 버튼 스타일 (a) */
+.r-page-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 32px;
+    background-color: black;
+    color: red;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-radius: 0;
+}
+
+/* 현재 선택된 페이지 */
+.r-active .r-page-link {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
