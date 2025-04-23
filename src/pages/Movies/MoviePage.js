@@ -24,7 +24,6 @@ const MoviePage = () => {
     const {data, isLoading, isError, error} = useSearchMovieQuery({keyword, page});
 
     const handlePageClick = ({selected}) => {
-        // console.log("page", page);
         setPage(selected + 1);
     }
 
@@ -58,9 +57,6 @@ const MoviePage = () => {
                 <Col xs={12}>
                     {data?.results.length === 0 ? (
                         <div>{keyword}와 일치하는 영화가 없습니다.</div>
-                        // <div className="text-white fs-4 fw-bold text-center py-5">
-                        //     🔍 <strong>{keyword}</strong>와(과) 일치하는 영화가 없습니다.
-                        // </div>
                     ) : (
                         <Row>
                             {data.results.map((movie, index) => (
@@ -76,7 +72,7 @@ const MoviePage = () => {
                             nextLabel=">"
                             previousLabel="<"
                             onPageChange={handlePageClick}
-                            pageCount={data.total_pages}
+                            pageCount={Math.min(data.total_pages, 500)}
                             pageRangeDisplayed={3}
                             marginPagesDisplayed={1}
                             forcePage={page - 1}

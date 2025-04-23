@@ -2,8 +2,10 @@ import React from 'react';
 import {Badge} from "react-bootstrap";
 import './MovieCard.style.css'
 import {useMovieGenreQuery} from "../../hooks/useMovieGenre";
+import { useNavigate } from 'react-router-dom';
 
 const MovieCard = ({movie}) => {
+    const navigate = useNavigate();
     const {data: genreData} = useMovieGenreQuery();
 
     const showGenre = (genreIdList) => {
@@ -15,6 +17,10 @@ const MovieCard = ({movie}) => {
         return genreNameList
     }
 
+    const handleClick = () => {
+        navigate(`/movies/${movie.id}`);
+    };
+
     return <div
         style={{
             backgroundImage:
@@ -23,6 +29,7 @@ const MovieCard = ({movie}) => {
                 ")"
         }}
         className="movie-card"
+        onClick={handleClick}
     >
         <div className="overlay p-2">
             <h1>{movie.title}</h1>
@@ -32,17 +39,13 @@ const MovieCard = ({movie}) => {
                 ))}
             </div>
             <div className="mt-2">
-                {/*<div>*/}
-                {/*    <img src="/IMDB.png" width="20" className="me-1"/>*/}
-                {/*    {movie.vote_average}*/}
-                {/*</div>*/}
                 <div>
                     <img src="/IMDB.png" width="20" className="me-1"/>
                     <span>{movie.popularity}</span>
                     {movie.adult ? (
-                        <img src="/over18.svg" width={20} className="ms-2" />
+                        <img src="/over18.svg" width={20} className="ms-2"/>
                     ) : (
-                        <img src="/under18.svg" width={20} className="ms-2" />
+                        <img src="/under18.svg" width={20} className="ms-2"/>
                     )}
                 </div>
             </div>
